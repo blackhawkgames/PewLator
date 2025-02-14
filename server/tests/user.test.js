@@ -25,11 +25,15 @@ app.post('/login', async (req, res) => {
 
 describe('User API', () => {
     beforeAll(async () => {
-        await mongoose.connect('mongodb://localhost:27017/pews', { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect('mongodb://localhost:27017/pews');
     });
 
     afterAll(async () => {
         await mongoose.connection.close();
+    });
+
+    beforeEach(async () => {
+        await User.deleteMany({});
     });
 
     it('deve registrar um novo usuário', async () => {
@@ -44,6 +48,9 @@ describe('User API', () => {
     });
 
     it('deve fazer login de um usuário', async () => {
+        const user = new User({ username: 'testuser', password: 'password' });
+        await user.save();
+
         const res = await request(app)
             .post('/login')
             .send({

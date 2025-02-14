@@ -144,11 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const consultationData = {
-            avaliador: {
-                nome: document.getElementById('avaliador-nome').value,
-                matricula: document.getElementById('avaliador-matricula').value,
-                funcao: document.getElementById('avaliador-funcao').value
-            },
             crianca: {
                 nome: document.getElementById('crianca-nome').value,
                 leito: document.getElementById('crianca-leito').value,
@@ -158,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
             faixaEtaria: document.getElementById('faixa-etaria').value,
             sinaisVitais: {
                 estadoPaciente: document.querySelector('select[id="faixa-etaria"]').value,
-                frequenciaCardiaca: document.getElementById('frenquencia').value
+                frequenciaCardiaca: document.getElementById('frequencia').value
             },
             scores: { ...scores },
             resultado: {
