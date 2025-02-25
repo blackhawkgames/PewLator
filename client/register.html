@@ -50,20 +50,17 @@
             const funcao = document.getElementById('funcao').value;
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-
             try {
                 const response = await fetch('http://localhost:5000/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ nome, matricula, funcao, username, password })
                 });
-
                 if (!response.ok) {
                     const errorData = await response.json();
                     alert('Erro no cadastro: ' + errorData.message);
                     return;
                 }
-
                 alert('Cadastro realizado com sucesso!');
                 window.location.href = 'login.html'; // Redirecionar para a página de login
             } catch (error) {

@@ -17,33 +17,30 @@
                     <div class="flex-shrink-0 flex items-center">
                         <h1 class="text-xl font-bold text-blue-600">PEWS Calculator</h1>
                     </div>
-                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <div class="flex space-x-10 ml-40">
                         <a href="index.html" class="border-b-2 border-transparent text-gray-500 hover:border-blue-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Nova Consulta</a>
                         <a href="historico.html" class="border-b-2 border-transparent text-gray-500 hover:border-blue-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Histórico de Consultas</a>
                         <a href="cadastros.html" class="border-b-2 border-transparent text-gray-500 hover:border-blue-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Cadastros de Usuários</a>
                         <a href="instrucoes.html" class="border-b-2 border-transparent text-gray-500 hover:border-blue-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Instruções</a>
                     </div>
                 </div>
-                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <div class="hidden sm:flex sm:items-center">
                     <button onclick="logout()" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium">Logout</button>
                 </div>
             </div>
         </div>
     </nav>
-
     <div class="max-w-4xl mx-auto p-6">
-        <!-- Header -->
         <div class="mb-10">
             <h1 class="text-3xl font-bold text-center text-blue-600 mb-4">Histórico de Cadastros</h1>
             <p class="text-center text-gray-600">Veja abaixo os usuários cadastrados.</p>
         </div>
-
-        <!-- Histórico de Cadastros -->
+        <div class="mb-6">
+            <input type="text" id="searchUsers" class="w-full p-2 border border-gray-300 rounded" placeholder="Buscar usuários...">
+        </div>
         <div id="users" class="space-y-6">
-            <!-- Usuários serão carregados aqui -->
         </div>
     </div>
-
     <script>
         function logout() {
             localStorage.removeItem('token');
